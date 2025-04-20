@@ -44,7 +44,6 @@ const PlayVideo = ({ videoId }) => {
     return (
         <div className="play-video">
             <iframe src={`https://www.youtube.com/embed/${videoId}?&autoplay=1`} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            {/* Best YouTube Channel To Learn Web Development  */}
             <h3>{apiData ? apiData.snippet.title : "Title Here"}</h3>
             <div className="play-video-info">
                 <p>{apiData ? value_converter(apiData.statistics.viewCount) : 1525} Views  &bull; {apiData ? moment(apiData.snippet.publishedAt).fromNow() : "2 days ago"}</p>
@@ -59,19 +58,14 @@ const PlayVideo = ({ videoId }) => {
             <div className="publisher">
                 <img src={channelData ? value_converter(channelData.snippet.thumbnails.default.url) : ""} alt="" />
                 <div>
-                    {/* GreatStack */}
                     <p>{apiData ? apiData.snippet.channelTitle : ""}</p>
-                    {/* 500K Subscribers */}
                     <span>{channelData ? value_converter(channelData.statistics.subscriberCount) : "1M"} Subscribers</span>
                 </div>
                 <button type="button">Subscribe</button>
             </div>
             <div className="vid-description">
-                {/* Channel that makes learning Easy
-                Subscribe GreatStack to Watch More Tutorials on web development */}
                 <p>{apiData ? apiData.snippet.description.slice(0, 250) : "Description Here"}</p>
                 <hr />
-                {/* 130 Comments */}
                 <h4>{apiData ? value_converter(apiData.statistics.commentCount) : 130} Comments</h4>
 
                 {commentData.map((item, index) => {
@@ -90,19 +84,6 @@ const PlayVideo = ({ videoId }) => {
                         </div>
                     )
                 })}
-                {/* <div className="comment">
-                    <img src={user_profile} alt="" />
-                    <div>
-                        <h3>Jack Nicholson <span>2 days ago</span></h3>
-                        <p>A global computer network providing a variety of information and communication facilities, consisting
-                            of interconnected networks using standardized communication protocols.</p>
-                        <div className="comment-action">
-                            <img src={like} alt="" />
-                            <span>244</span>
-                            <img src={dislike} alt="" />
-                        </div>
-                    </div>
-                </div> */}
             </div>
 
         </div>
