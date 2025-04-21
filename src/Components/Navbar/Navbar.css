@@ -83,6 +83,7 @@ nav{
   body.dark .search-suggestions li:hover {
     background: #333333;
   }
+
   
   @media (max-width: 900px) {
     .menu-icon {

@@ -83,8 +83,8 @@ const Navbar = ({ setSidebar, setSearchQuery, darkMode, toggleDarkMode }) => {
       </div>
       <div className="nav-right flex-div">
         <img src={upload_icon} alt="Upload" />
-        <img src={more_icon} alt="More" />
-        <img src={notification_icon} alt="Notification" />
+        {/* <img src={more_icon} alt="More" />
+        <img src={notification_icon} alt="Notification" /> */}
         <button onClick={toggleDarkMode} className="dark-mode-toggle">
           {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
         </button>
