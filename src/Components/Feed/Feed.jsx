@@ -14,19 +14,22 @@ const Feed = ({ category, searchQuery }) => {
 
   const fetchData = async (token = '') => {
     if (isLoading || !hasMore) return;
-
+  
     setIsLoading(true);
-    let url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=5&key=${API_KEY}`;
+    const categories = [0, 10, 20, 24,2,17,28,22,25]; // All, Music, Gaming, Entertainment
+    const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+    const regions = ['US', 'IN', 'GB'];
+    const randomRegion = regions[Math.floor(Math.random() * regions.length)];
+  
+    let url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=5&regionCode=${randomRegion}&videoCategoryId=${randomCategory}&key=${API_KEY}`;
     if (searchQuery) {
       url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${encodeURIComponent(searchQuery)}&type=video&key=${API_KEY}`;
-    } else if (category && category !== '0') {
-      url += `&videoCategoryId=${category}®ionCode=US`;
     }
     if (token) {
       url += `&pageToken=${token}`;
     }
-
-    console.log('Request URL:', url);
+  
+    console.log('Request URL:', url); // Debug the full URL
     try {
       const response = await fetch(url);
       if (!response.ok) {
