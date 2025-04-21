@@ -43,3 +43,8 @@ npm run dev
 
 
 ## Screenshots: 
+![Homepage Preview](./src/assets/Screenshot%20(410).png)
+
+![Search Bar working](./src/assets/Screenshot%20(411).png)
+
+![Video playing in Dark Mode](./src/assets/Screenshot%20(413).png)
