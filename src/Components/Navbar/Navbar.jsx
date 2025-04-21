@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './Navbar.css';
 import menu_icon from '../../assets/menu.png';
 import logo from '../../assets/logo.png';
@@ -11,8 +11,7 @@ import { Link } from 'react-router-dom';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { API_KEY } from '../../data';
 
-const Navbar = ({ setSidebar, setSearchQuery }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+const Navbar = ({ setSidebar, setSearchQuery, darkMode, toggleDarkMode }) => {
   const [search, setSearch] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -43,17 +42,12 @@ const Navbar = ({ setSidebar, setSearchQuery }) => {
     }
   };
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle('dark');
-  };
-
   return (
     <nav className="flex-div">
       <div className="nav-left flex-div">
         <img src={menu_icon} alt="Menu" className="menu-icon" onClick={sidebar_toggle} />
         <Link to="/">
-          <img src={isDarkMode ? logoDark : logo} alt="Logo" className="logo" />
+          <img src={darkMode ? logoDark : logo} alt="Logo" className="logo" />
         </Link>
       </div>
       <div className="nav-middle flex-div">
@@ -92,7 +86,7 @@ const Navbar = ({ setSidebar, setSearchQuery }) => {
         <img src={more_icon} alt="More" />
         <img src={notification_icon} alt="Notification" />
         <button onClick={toggleDarkMode} className="dark-mode-toggle">
-          {isDarkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
+          {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
         </button>
       </div>
     </nav>

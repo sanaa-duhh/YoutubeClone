@@ -1,3 +1,4 @@
+/* src/index.css */
 * {
   margin: 0;
   padding: 0;
@@ -16,10 +17,11 @@ img {
   align-items: center;
 }
 
-/* Dark mode styles */
+/* Dark mode styles with transition */
 body.dark {
   background-color: #181818;
   color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 body.dark a {
   color: #aaaaaa;
