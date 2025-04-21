@@ -3,19 +3,18 @@ import './Sidebar.css'
 import home from '../../assets/home.png'
 import game_icon from '../../assets/game_icon.png'
 import automobiles from '../../assets/automobiles.png'
-import explore from '../../assets/explore.png'
-import subscriprion from '../../assets/subscriprion.png'
 import sports from '../../assets/sports.png'
 import entertainment from '../../assets/entertainment.png'
 import tech from '../../assets/tech.png'
 import music from '../../assets/music.png'
 import blogs from '../../assets/blogs.png'
 import news from '../../assets/news.png'
-import jack from '../../assets/jack.png'
+import jack from '../../assets/jack.jpg'
 import simon from '../../assets/simon.png'
 import tom from '../../assets/tom.png'
 import megan from '../../assets/megan.png'
 import cameron from '../../assets/cameron.png'
+import { Link } from 'react-router-dom';
 
 const Sidebar = ({sidebar,category,setCategory}) => {
   return (
@@ -33,12 +32,19 @@ const Sidebar = ({sidebar,category,setCategory}) => {
             <hr/>
         </div>
         <div className="subscribed-list">
-            <h3>SUBSCRIBED</h3>
-            <div className={`side-link`}><img src={jack} alt="" /><p>PewDiePie</p></div>
-            <div className={`side-link`}><img src={simon} alt="" /><p>MrBeast</p></div>
-            <div className={`side-link`}><img src={tom} alt="" /><p>Justin Bieber</p></div>
-            <div className={`side-link`}><img src={megan} alt="" /><p>5-Minute Crafts</p></div>
-            <div className={`side-link`}><img src={cameron} alt="" /><p>Nas Daily</p></div>
+            <h3>Subscriptions</h3>
+            <Link to="/subscriptions/T-Series" className="side-link">
+          <img src={jack} alt="T-Series" />
+          <p>T-Series</p>
+        </Link>
+        <Link to="/subscriptions/MrBeast" className="side-link">
+          <img src={simon} alt="MrBeast" />
+          <p>MrBeast</p>
+        </Link>
+        <Link to="/subscriptions/5-MinuteCrafts" className="side-link">
+          <img src={megan} alt="5-Minute Crafts" />
+          <p>5-Minute Crafts</p>
+        </Link>
         </div>
     </div>
   )

@@ -1,18 +1,73 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
 }
-a{
+a {
   text-decoration: none;
   color: #5a5a5a;
 }
-img{
+img {
   cursor: pointer;
 }
-
-.flex-div{
+.flex-div {
   display: flex;
   align-items: center;
+}
+
+/* Dark mode styles */
+body.dark {
+  background-color: #181818;
+  color: #ffffff;
+}
+body.dark a {
+  color: #aaaaaa;
+}
+body.dark .sidebar {
+  background: #212121;
+}
+body.dark .container,
+body.dark .play-container {
+  background: #181818;
+}
+body.dark .feed .card h2,
+body.dark .play-video h3,
+body.dark .publisher div p {
+  color: #ffffff;
+}
+body.dark .feed .card h3,
+body.dark .feed .card p,
+body.dark .play-video .play-video-info p,
+body.dark .publisher div span,
+body.dark .vid-description p,
+body.dark .vid-description h4,
+body.dark .comment h3 span,
+body.dark .comment .comment-action span,
+body.dark .recommended p,
+body.dark .recommended .recommended-views {
+  color: #aaaaaa;
+}
+body.dark .nav-middle .search-box {
+  border-color: #444444;
+}
+body.dark .nav-middle .search-box input {
+  background: #121212;
+  color: #ffffff;
+}
+body.dark nav {
+  background: #212121;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+body.dark .publisher button {
+  background: #cc0000;
+}
+body.dark hr {
+  background: #444444;
+}
+body.dark .subscribed-list h3 {
+  color: #aaaaaa;
+}
+body.dark .shortcut-links .active {
+  color: #ff5555;
 }
